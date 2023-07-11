@@ -38,3 +38,5 @@ pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 [2] [ChatGLM-6B博客](https://chatglm.cn/blog)
 
 [3] [ChatGLM2-6B](https://github.com/THUDM/ChatGLM2-6B)
+
+[4] [ChatGLM2-6B 的部署与微调教程](https://www.heywhale.com/mw/project/64984a7b72ebe240516ae79c)
