@@ -158,7 +158,7 @@ from utils import load_model_on_gpus
 model = load_model_on_gpus("THUDM/chatglm2-6b", num_gpus=2)
 ```
 
-即可将模型部署到两张 GPU 上进行推理。你可以将 num_gpus 改为你希望使用的 GPU 数。默认是均匀切分的，你也可以传入 device_map 参数来自己指定。
+即可将模型部署到两张 GPU 上进行推理。你可以将 `num_gpus` 改为你希望使用的 GPU 数。默认是均匀切分的，你也可以传入 `device_map` 参数来自己指定。
 
 ## 参考
 
@@ -169,3 +169,5 @@ model = load_model_on_gpus("THUDM/chatglm2-6b", num_gpus=2)
 [3] [ChatGLM2-6B](https://github.com/THUDM/ChatGLM2-6B)
 
 [4] [ChatGLM2-6B 的部署与微调教程](https://www.heywhale.com/mw/project/64984a7b72ebe240516ae79c)
+
+[5] [Data Mining Research Group at Tsinghua University](https://huggingface.co/THUDM)
