@@ -108,6 +108,58 @@ curl -X POST "http://127.0.0.1:8000" \
 }
 ```
 
+## 低成本部署
+
+### 模型量化
+
+默认情况下，模型以 FP16 精度加载，运行上述代码需要大概 13GB 显存。如果你的 GPU 显存有限，可以尝试以量化方式加载模型，使用方法如下：
+
+```python
+# 按需修改，目前只支持 4/8 bit 量化
+model = AutoModel.from_pretrained("THUDM/chatglm2-6b", trust_remote_code=True).quantize(8).cuda()
+```
+
+模型量化会带来一定的性能损失，经过测试，ChatGLM2-6B 在 4-bit 量化下仍然能够进行自然流畅的生成。
+
+如果你的内存不足，可以直接加载量化后的模型：
+
+```python
+model = AutoModel.from_pretrained("THUDM/chatglm2-6b-int4",trust_remote_code=True).cuda()
+```
+
+---
+
+对应的示例: [模型量化](./quantize.ipynb)
+
+### CPU 部署
+
+如果你没有 GPU 硬件的话，也可以在 CPU 上进行推理，但是推理速度会更慢。使用方法如下（需要大概 32GB 内存）
+
+```python
+model = AutoModel.from_pretrained("THUDM/chatglm2-6b", trust_remote_code=True).float()
+```
+
+如果你的内存不足的话，也可以使用量化后的模型
+
+```python
+model = AutoModel.from_pretrained("THUDM/chatglm2-6b-int4",trust_remote_code=True).float()
+```
+
+---
+
+对应的示例: [CPU 部署](./cpu.ipynb)
+
+### 多卡部署
+
+如果你有多张 GPU，但是每张 GPU 的显存大小都不足以容纳完整的模型，那么可以将模型切分在多张GPU上。首先安装 accelerate: `pip install accelerate`，然后通过如下方法加载模型：
+
+```python
+from utils import load_model_on_gpus
+model = load_model_on_gpus("THUDM/chatglm2-6b", num_gpus=2)
+```
+
+即可将模型部署到两张 GPU 上进行推理。你可以将 num_gpus 改为你希望使用的 GPU 数。默认是均匀切分的，你也可以传入 device_map 参数来自己指定。
+
 ## 参考
 
 [1] [ChatGLM-6B](https://github.com/THUDM/ChatGLM-6B)
