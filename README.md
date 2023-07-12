@@ -33,11 +33,25 @@ pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 2. 网页版 Demo 使用:
 
+方法 1:
+
 ```shell
 python web_demo.py
 ```
 
-![](./images/ChatGLM2-6B.png)
+![](./images/web-demo-ChatGLM2-6B.png)
+
+方法 2:
+
+```shell
+streamlit run web_demo2.py
+```
+
+![](./images/web-demo2-ChatGLM2-6B.png)
+
+---
+
+经测试，如果输入的 prompt 较长的话，使用基于 Streamlit 的网页版 Demo (方法二)会更流畅。
 
 3. 命令行 Demo 使用（输入 clear 可以清空对话历史，输入 stop 终止程序）:
 
