@@ -178,6 +178,8 @@ model = load_model_on_gpus("THUDM/chatglm2-6b", num_gpus=2)
 
 **[2023/07/04]** 发布 P-Tuning v2 与 全参数微调脚本，参见 [P-Tuning](./ptuning/)。
 
+[LoRA](https://arxiv.org/abs/2106.09685)微调方法的脚本，参见 [lora](./lora/)。
+
 ## 参考
 
 [1] [ChatGLM-6B](https://github.com/THUDM/ChatGLM-6B)
@@ -191,3 +193,7 @@ model = load_model_on_gpus("THUDM/chatglm2-6b", num_gpus=2)
 [5] [Data Mining Research Group at Tsinghua University](https://huggingface.co/THUDM)
 
 [6] [ChatGLM-6B 微调官方推荐教程](https://www.heywhale.com/mw/project/6436d82948f7da1fee2be59e)
+
+[7] [对 ChatGLM-6B 做 LoRA Fine-tuning](https://blog.csdn.net/phycoding/article/details/129884586)
+
+[8] [chatglm-finetune](https://github.com/aizpy/chatglm-finetune)
