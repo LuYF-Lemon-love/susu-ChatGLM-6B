@@ -197,3 +197,7 @@ model = load_model_on_gpus("THUDM/chatglm2-6b", num_gpus=2)
 [7] [对 ChatGLM-6B 做 LoRA Fine-tuning](https://blog.csdn.net/phycoding/article/details/129884586)
 
 [8] [chatglm-finetune](https://github.com/aizpy/chatglm-finetune)
+
+[9] [对 ChatGLM-6B 做 LoRA fine tuning](https://aizpy.com/2023/03/30/chatglm-6b-lora/)
+
+[10] [ChatGLM-Tuning](https://github.com/mymusise/ChatGLM-Tuning)
